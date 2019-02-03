@@ -292,7 +292,7 @@ func destroyBootstrap(ctx context.Context, config *rest.Config, directory string
 // waitForInitializedCluster watches the ClusterVersion waiting for confirmation
 // that the cluster has been initialized.
 func waitForInitializedCluster(ctx context.Context, config *rest.Config) error {
-	timeout := 30 * time.Minute
+	timeout := 60 * time.Minute
 	logrus.Infof("Waiting up to %v for the cluster to initialize...", timeout)
 	cc, err := configclient.NewForConfig(config)
 	if err != nil {
